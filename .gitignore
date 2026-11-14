@@ -1,0 +1,23 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local secrets. Never commit.
+.env
+.env.local
+.env.*.local
+
+# Runtime data: database, uploads, crops. Contains personal data in real use.
+data/
+storage/
+
+# Generated synthetic exports (rebuild with `npm run fixtures`)
+fixtures/exports/
+fixtures/images/
+
+.DS_Store

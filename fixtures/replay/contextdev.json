@@ -1,0 +1,137 @@
+{
+  "_provenance": "Live Context.dev responses recorded on 2026-11-14 against public restaurant websites, through the Context.dev MCP server (same API as https://api.context.dev/v1). Edits, all structural: image lists are trimmed of inline data: URIs (SVG icons) and tracking pixels; responses fetched in the MCP 'compact' mode are re-wrapped in the REST API's per-output envelope ({requested, success, data}); very long menu descriptions on the Starita page are shortened. Values are otherwise unchanged, including Context.dev's own quirks (website_url null, price ':null'), which the code handles. Keys are the semantic keys built by src/integrations/contextdev.ts (replayKey). 'request' records the parameters actually sent. Re-record with RECORD=1 and CONTEXT_DEV_API_KEY set.",
+  "entries": {
+    "answers|Löyly|Helsinki, Finland": {
+      "recorded_at": "2026-11-14T19:58:00Z",
+      "request": { "endpoint": "POST /v1/web/answers", "mode": "fast", "task": "Find the official website of the food venue \"Löyly\" in Helsinki, Finland. Return the venue name, street address, official website (the venue's own site, not a review, delivery or booking site) and your confidence (0-1) that the website belongs to this venue.", "json_format": { "venue_name": "", "address": "", "website_url": "", "confidence": 0 } },
+      "response": { "json_content": { "venue_name": "Löyly", "address": "Hernesaarenranta, 400150 Helsinki", "website_url": null, "confidence": 1 }, "sources": ["https://www.loylyhelsinki.fi/en/info"], "request_id": "7e19dce8-3736-4b46-9c6f-650c4b4902e3" }
+    },
+    "answers|The Sheep Heid Inn|Edinburgh, United Kingdom": {
+      "recorded_at": "2026-11-14T19:55:00Z",
+      "request": { "endpoint": "POST /v1/web/answers", "mode": "fast", "task": "Find the official website of the food venue \"The Sheep Heid Inn\" in Edinburgh, United Kingdom. Return the venue name, street address, official website (the venue's own site, not a review, delivery or booking site) and your confidence (0-1) that the website belongs to this venue.", "json_format": { "venue_name": "", "address": "", "website_url": "", "confidence": 0 } },
+      "response": { "json_content": { "venue_name": "The Sheep Heid Inn", "address": "43-45 The Causeway, Edinburgh, EH15 3QA", "website_url": "https://www.thesheepheidedinburgh.co.uk/", "confidence": 1 }, "sources": ["https://www.thesheepheidedinburgh.co.uk/"], "request_id": "937d609b-f414-4c36-a390-e39e4f77d264" }
+    },
+    "answers|L'Antica Pizzeria da Michele|Naples, Italy": {
+      "recorded_at": "2026-11-14T19:58:00Z",
+      "request": { "endpoint": "POST /v1/web/answers", "mode": "fast", "task": "Find the official website of the food venue \"L'Antica Pizzeria da Michele\" in Naples, Italy. Return the venue name, street address, official website (the venue's own site, not a review, delivery or booking site) and your confidence (0-1) that the website belongs to this venue.", "json_format": { "venue_name": "", "address": "", "website_url": "", "confidence": 0 } },
+      "response": { "json_content": { "venue_name": "L'Antica Pizzeria da Michele", "address": "Via Cesare Sersale, 1, 80139 Napoli, Italy", "website_url": "https://anticapizzeriadamichele.it/", "confidence": 0.99 }, "sources": ["https://anticapizzeriadamichele.it/"], "request_id": "a801cab6-e09d-4901-ad52-f64fede5c0ff" }
+    },
+    "answers|Pizzeria Starita|Naples, Italy": {
+      "recorded_at": "2026-11-14T19:55:00Z",
+      "request": { "endpoint": "POST /v1/web/answers", "mode": "fast", "task": "Find the official website of the food venue \"Pizzeria Starita\" in Naples, Italy. Return the venue name, street address, official website (the venue's own site, not a review, delivery or booking site) and your confidence (0-1) that the website belongs to this venue.", "json_format": { "venue_name": "", "address": "", "website_url": "", "confidence": 0 } },
+      "response": { "json_content": { "venue_name": "Pizzeria Starita", "address": "Via Materdei, 27/28, 80136 Napoli, Italy", "website_url": null, "confidence": 0.99 }, "sources": ["https://pizzeriestarita.it/en/locations/"], "request_id": "a54f3d47-743d-418d-86b7-0ca5363bca0b" }
+    },
+    "map|loylyhelsinki.fi": {
+      "recorded_at": "2026-11-14T19:45:00Z",
+      "request": { "endpoint": "GET /v1/web/urls", "domain": "loylyhelsinki.fi", "search": "restaurant menu food dinner lunch", "maxLinks": 15 },
+      "response": { "success": true, "domain": "loylyhelsinki.fi", "urls": [
+        { "url": "https://www.loylyhelsinki.fi/en/restaurant" }, { "url": "https://www.loylyhelsinki.fi/en/lunch" }, { "url": "https://www.loylyhelsinki.fi/ravintola" }, { "url": "https://www.loylyhelsinki.fi/lounas" }, { "url": "https://www.loylyhelsinki.fi/op-menu" }, { "url": "https://www.loylyhelsinki.fi/all-day-menu" }, { "url": "https://www.loylyhelsinki.fi/en/menu/a-la-carte" }, { "url": "https://www.loylyhelsinki.fi/en/a-la-carte-menus" }, { "url": "https://www.loylyhelsinki.fi/menut/sauna-menu" }, { "url": "https://www.loylyhelsinki.fi/en/menu/sauna-menu" }, { "url": "https://www.loylyhelsinki.fi/en/news/lunch-by-the-sea" }, { "url": "https://www.loylyhelsinki.fi/ajankohtaista/lounas-itameren-aarella" }, { "url": "https://www.loylyhelsinki.fi/ajankohtaista/uusi-chefs-menu-loylyssa---viiden-ruokalajin-suomalainen-makuelamys" }, { "url": "https://www.loylyhelsinki.fi/en/news/have-you-tried-our-autumn-season-menu" }, { "url": "https://www.loylyhelsinki.fi/en/news/new-chefs-menu-at-loyly---a-five-course-finnish-taste-experience" }
+      ], "request_id": "e54f82be-94d4-4cc9-b7da-41f18c3fbe68" }
+    },
+    "map|thesheepheidedinburgh.co.uk": {
+      "recorded_at": "2026-11-14T19:55:00Z",
+      "request": { "endpoint": "GET /v1/web/urls", "domain": "thesheepheidedinburgh.co.uk", "search": "menu food dinner lunch dessert", "maxLinks": 15 },
+      "response": { "success": true, "domain": "thesheepheidedinburgh.co.uk", "urls": [
+        { "url": "https://www.thesheepheidedinburgh.co.uk/menus" }, { "url": "https://www.thesheepheidedinburgh.co.uk/vegan-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/festive-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/nyd-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/menu-offer" }, { "url": "https://www.thesheepheidedinburgh.co.uk/drinks-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/nye-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/galentines-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/security/hogmanay_menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/security/tour-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/boxing-day-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/christmas-day-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/events/canape-set-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/events/gold-set-menu" }, { "url": "https://www.thesheepheidedinburgh.co.uk/events/sunday-set-menu" }
+      ], "request_id": "54fd5889-7f05-4cbe-aae8-2f52023fecf8" }
+    },
+    "map|pizzeriestarita.it": {
+      "recorded_at": "2026-11-14T19:57:00Z",
+      "request": { "endpoint": "GET /v1/web/urls", "domain": "pizzeriestarita.it", "search": "menu food dinner lunch dessert", "maxLinks": 15 },
+      "response": { "success": true, "domain": "pizzeriestarita.it", "urls": [ { "url": "https://pizzeriestarita.it/il-menu" }, { "url": "https://pizzeriestarita.it/en/menu" } ], "request_id": "a63496af-6532-4b9c-b883-c8462dfcb4ec" }
+    },
+    "map|anticapizzeriadamichele.it": {
+      "recorded_at": "2026-11-14T19:59:00Z",
+      "request": { "endpoint": "GET /v1/web/urls", "domain": "anticapizzeriadamichele.it", "search": "menu food dinner lunch dessert", "maxLinks": 15 },
+      "response": { "success": true, "domain": "anticapizzeriadamichele.it", "urls": [], "request_id": "3a819514-300f-4b78-b423-de890c0aac87" }
+    },
+    "map|damichele.net": {
+      "recorded_at": "2026-11-14T19:45:00Z",
+      "request": { "endpoint": "GET /v1/web/urls", "domain": "damichele.net", "search": "menu pizza", "maxLinks": 15 },
+      "response": { "success": true, "domain": "damichele.net", "urls": [ { "url": "https://www.damichele.net/comunicati-stampa/le-vie-della-pizza" }, { "url": "https://www.damichele.net/comunicati-stampa/partenope-in-pizzeria" }, { "url": "https://www.damichele.net/antica-pizzeria-da-michele-in-the-world-e-caffe-moreno-in-co-branding-per-il-mondo" } ], "request_id": "71c9991b-1251-44ed-8fb7-65780b4d0a0d" }
+    },
+    "links|https://anticapizzeriadamichele.it": {
+      "recorded_at": "2026-11-14T20:00:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://anticapizzeriadamichele.it/", "formats": { "parse": true }, "parseParams": { "type": "prebuilt", "parser": "links" }, "maxAgeMs": 604800000 },
+      "response": { "url": "https://anticapizzeriadamichele.it/", "parsed": { "requested": true, "success": true, "data": { "links": [] } }, "metadata": { "title": "anticapizzeriadamichele.it" }, "request_id": "abc3d949-ef13-4635-b307-1533c0e994ba" }
+    },
+    "links|https://www.damichele.net": {
+      "recorded_at": "2026-11-14T19:46:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://www.damichele.net/", "formats": { "parse": true }, "parseParams": { "type": "prebuilt", "parser": "links" }, "maxAgeMs": 604800000 },
+      "response": { "url": "https://www.damichele.net/", "parsed": { "requested": true, "success": true, "data": { "links": [
+        { "url": "https://www.damichele.net/", "text": "Pizzeria da Michele" }, { "url": "https://www.damichele.net/storia-e-passione/", "text": "Storia e Passione" }, { "url": "https://www.damichele.net/sede-di-napoli/", "text": "Sede di Napoli" }, { "url": "https://www.damichele.net/sede-di-salerno/", "text": "Sede di Salerno" }, { "url": "https://www.damichele.net/sede-di-aversa/", "text": "Sede di Aversa" }, { "url": "https://www.damichele.net/sede-di-pompei/", "text": "Sede di Pompei" }, { "url": "https://www.damichele.net/sede-di-caserta/", "text": "Sede di Caserta" }, { "url": "https://www.damichele.net/michele-express-pontecagnano/", "text": "Michele Express Pontecagnano" }, { "url": "https://www.damichele.net/michele-express-maximall-pompeii/", "text": "Michele Express MaxiMall Pompeii" }, { "url": "https://www.damichele.net/da-michele-experience/", "text": "Polo Museale" }, { "url": "https://damicheleshop.com/", "text": "Shop" }, { "url": "https://www.damichele.net/news/", "text": "News" }, { "url": "https://www.damichele.net/dicono-di-noi/", "text": "Dicono di Noi" }, { "url": "https://www.damichele.net/authentico/", "text": "Authentico" }, { "url": "https://www.damichele.net/contatti/", "text": "Contatti" }, { "url": "https://www.damichele.net/sede-di-napoli", "text": "SCOPRI" }, { "url": "https://www.damichele.net/sede-di-aversa", "text": "SCOPRI" }, { "url": "https://www.damichele.net/sede-di-pompei", "text": "SCOPRI" }, { "url": "https://www.damichele.net/sede-di-caserta", "text": "Scopri" }, { "url": "http://www.micheleintheworld.com/", "text": "SCOPRI \"MICHELE IN THE WORLD\"" }, { "url": "https://www.damichele.net/visite-vip/", "text": "VISITE VIP" }, { "url": "https://www.damichele.net/nuova-apertura-aversa/", "text": "Nuova Apertura Aversa" }, { "url": "https://www.damichele.net/news", "text": "SCOPRI TUTTE LE NEWS" }, { "url": "https://www.facebook.com/damichele1870", "text": null }, { "url": "https://www.instagram.com/pizzeriadamichele/", "text": null }, { "url": "https://www.damichele.net/termini-e-condizioni/", "text": "Termini e condizioni" }
+      ] } }, "metadata": { "title": "Pizzeria da Michele – Il tempio della Pizza – sede storica di Napoli", "language": "it-IT" }, "request_id": "f3e4c9bf-2e89-42aa-92b9-5db00513c325" }
+    },
+    "scrape|https://www.loylyhelsinki.fi/en/menu/a-la-carte": {
+      "recorded_at": "2026-11-14T19:47:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://www.loylyhelsinki.fi/en/menu/a-la-carte", "formats": { "json": true, "images": true }, "jsonParams": "MENU_SCHEMA (src/integrations/contextdev.ts)", "imageParams": { "enrich": ["dimensions", "classification"], "dedupe": "visual" }, "sharedParams": { "parsers": { "pdf": { "ocr": "auto" } } }, "maxAgeMs": 604800000 },
+      "response": { "url": "https://www.loylyhelsinki.fi/en/menu/a-la-carte",
+        "images": { "requested": true, "success": true, "data": [
+          { "url": "https://cdn.prod.website-files.com/64635bd73c547e7eabe3cd83/646f32ebf0df6298f1e3793b_loyly-logo-valkoinen.svg", "alt": "Löyly logo", "width": 1985, "height": 752, "classification": "logo" },
+          { "url": "https://cdn.prod.website-files.com/64635bd73c547e7eabe3cd83/64799fac04f01080178de747_loyly-favicon-alt.png", "alt": null, "width": 32, "height": 32, "classification": "icon" },
+          { "url": "https://cdn.prod.website-files.com/64635bd73c547e7eabe3cd83/64799efae189dd5d11f4cb4a_loyly-appicon.png", "alt": null, "width": 256, "height": 256, "classification": "wordmark" },
+          { "url": "https://cdn.prod.website-files.com/64635bd73c547e7eabe3cd83/6470a4237d120de0b910e619_navbar-bg.jpg", "alt": null, "width": 1678, "height": 153, "classification": "graphic" },
+          { "url": "https://cdn.prod.website-files.com/64635bd73c547e7eabe3cd83/675979ea1689a1cdb9ba305b_LO%CC%88YLY_2_008.jpg", "alt": null, "width": 1600, "height": 900, "classification": "photography" },
+          { "url": "https://cdn.prod.website-files.com/64635bd73c547e7eabe3cd83/6470aab56194e83c48eb83cf_loyly-ravintola.webp", "alt": null, "width": 1678, "height": 469, "classification": "photography" }
+        ] },
+        "json": { "requested": true, "success": true, "data": { "restaurant_name": "Löyly", "menu_sections": [
+          { "section": "SNAKCS", "items": [ { "name": "Mini carelian pies and egg butter", "description": "", "price": "6", "dietary_tags": ["L"] }, { "name": "Parmesan fries & Aioli", "description": "Parmesan fries & Aioli", "price": "8", "dietary_tags": ["L", "G"] }, { "name": "Crispy potatoes", "description": "Crispy potatoes, smoked rainbow trout roe and lemon sour cream", "price": "8", "dietary_tags": ["L", "G"] }, { "name": "Caesar salad", "description": "Baby gem salad, caesar sauce, parmesan and malt bread crumble", "price": "7", "dietary_tags": ["L", "G", "V"] } ] },
+          { "section": "Starters", "items": [ { "name": "Charred butternut squash", "description": "Charred butternut squash, goat cheese, jalopeno- kale oil and salted peanuts", "price": "", "dietary_tags": ["L", "G", "v"] }, { "name": "Reindeer tartar", "description": "Reindeer tartar, juniper mayonnaise and cured egg yolk", "price": "", "dietary_tags": ["L", "G"] }, { "name": "White fish crudo", "description": "White fish crudo, dill sour milk sauce, cucumber granite and crispy rice chips", "price": "", "dietary_tags": ["L", "G"] }, { "name": "shrimps skagen", "description": "Handpeeled shrimps skagen, roasted brioche bread and smoked rainbow trout roe", "price": "", "dietary_tags": ["L"] } ] },
+          { "section": "Main Dishes", "items": [ { "name": "Chantarelle risotto", "description": "Chantarelle risotto, pickled chantarelles and pecorino cheese", "price": "24", "dietary_tags": ["L", "G", "V"] }, { "name": "CRISPY CHICKEN", "description": "Battered chicken filée, potato mash, caper and tarragon butter sauce", "price": "27", "dietary_tags": ["L"] }, { "name": "Roasted pike- perch", "description": "Roasted pike- perch, potato foam, seasonal veggies and horseradish- butter sauce", "price": "34", "dietary_tags": ["L", "G"] }, { "name": "Beef tenderloin", "description": "Beef tenderloin, crispy parmesan potato, pepper sauce and broccolinis", "price": "42", "dietary_tags": ["L", "G"] }, { "name": "Sautéed Reindeer", "description": "Potatopyré, pickles and lingonberries", "price": "34", "dietary_tags": ["L", "G"] } ] },
+          { "section": "Classics", "items": [ { "name": "Löyly Bowl", "description": "Sushi rice, pickled red onion, edamame beans, marinated ginger, avocado, teriyaki sauce, togarashi mayo, rice paper chips and sesame seeds. Choose tofu / charred rainbow trout", "price": "", "dietary_tags": [] }, { "name": "Löyly Burger", "description": "Local beef burger, cheddar cheese, bacon, pickles, tomato, salad, caramelized onion and aioli", "price": "25", "dietary_tags": ["L"] }, { "name": "Vege burger", "description": "Beyond meat patty, cheddar cheese, pickles, red onion, tomato, salad and aioli", "price": "24", "dietary_tags": ["L", "V", "G"] }, { "name": "JASPER´S SALMON SOUP", "description": "Finnish sustainably farmed rainbow trout and cold smoked rainbow trout", "price": "24", "dietary_tags": ["L", "G"] } ] },
+          { "section": "SWEETS", "items": [ { "name": "Lingonberry semifreddo", "description": "Lingonberry semifreddo, roasted white chocolate and salted caramel", "price": "12", "dietary_tags": ["L", "G", "V"] }, { "name": "Creme brulee", "description": "Liquorice creme brulee and lemon ice cream", "price": "13", "dietary_tags": ["L", "G"] }, { "name": "Blueberry rye pie", "description": "Blueberry rye pie, vanilla ice cream, marenque and blueberry gel", "price": "13", "dietary_tags": ["L", "G"] }, { "name": "Finnish baked bread cheese", "description": "Finnish baked bread cheese and cloudberry jam", "price": "12", "dietary_tags": ["L", "G"] } ] }
+        ] } },
+        "metadata": { "title": "A la carte", "language": "fi" }, "request_id": "f9a9d598-96f4-44ce-a479-d68f5b1700f6" }
+    },
+    "scrape|https://www.thesheepheidedinburgh.co.uk/menus": {
+      "recorded_at": "2026-11-14T19:52:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://www.thesheepheidedinburgh.co.uk/dessertmenu (redirects to /menus#/)", "formats": { "json": true, "images": true }, "jsonParams": "MENU_SCHEMA", "imageParams": { "enrich": ["dimensions", "classification"], "dedupe": "visual" }, "sharedParams": { "parsers": { "pdf": { "ocr": "auto" } } }, "maxAgeMs": 604800000, "note": "Two further attempts with sharedParams.waitFor 6000/8000 and includeFrames=true also returned no items; the menu is rendered by a script widget." },
+      "response": { "url": "https://www.thesheepheidedinburgh.co.uk/menus#/",
+        "images": { "requested": true, "success": true, "data": [
+          { "url": "https://www.thesheepheidedinburgh.co.uk/content/dam/pcdg/common/nova/pcp-2026-nova-08-menus-banner.jpg.asset/1792583675050.jpg", "alt": "pcp-2026-nova-08-menus-banner.jpg", "width": 1920, "height": 744, "classification": "photography" },
+          { "url": "https://www.thesheepheidedinburgh.co.uk/content/dam/pcdg/common/2026/christmas/phase4/pcp-2026-christmas-phase4-03-festivemenu-slimstrip-banner2.jpg.asset/1792583675185.jpg", "alt": "pcp-2026-christmas-phase4-03-festivemenu-slimstrip-banner2.jpg", "width": 800, "height": 39, "classification": "graphic" },
+          { "url": "https://www.thesheepheidedinburgh.co.uk/content/dam/pcdg/common/nova/pcp-2026-nova-35-signup-midpage-banner.jpg.asset/1792583675265.jpg", "alt": "Country pub food in Edinburgh", "width": 1920, "height": 370, "classification": "graphic" },
+          { "url": "https://www.thesheepheidedinburgh.co.uk/content/dam/pcdg/common/nova/pcp-nova-footer-image.jpg", "alt": "Premium Country Pubs", "width": 270, "height": 143, "classification": "graphic" }
+        ] },
+        "json": { "requested": true, "success": true, "data": { "restaurant_name": "The Sheep Heid Inn", "menu_sections": [] } },
+        "metadata": { "title": "Country Pub Food Menu in Edinburgh | The Sheep Heid Inn", "language": "en" }, "request_id": "11c68499-8c1a-4261-b580-c5e10b6f4713" }
+    },
+    "scrape|https://www.thesheepheidedinburgh.co.uk/vegan-menu": {
+      "recorded_at": "2026-11-14T19:57:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://www.thesheepheidedinburgh.co.uk/vegan-menu", "formats": { "json": true }, "jsonParams": "MENU_SCHEMA", "sharedParams": { "parsers": { "pdf": { "ocr": "auto" } } }, "maxAgeMs": 604800000 },
+      "response": { "url": "https://www.thesheepheidedinburgh.co.uk/menus#/", "json": { "requested": true, "success": true, "data": { "restaurant_name": "The Sheep Heid Inn", "menu_sections": [] } }, "metadata": { "title": "Country Pub Food Menu in Edinburgh | The Sheep Heid Inn", "language": "en" }, "request_id": "ac9e6555-e474-4e0e-8e15-edbdf3d92c74" }
+    },
+    "scrape|https://pizzeriestarita.it/en/menu": {
+      "recorded_at": "2026-11-14T19:54:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://pizzeriestarita.it/en/menu", "formats": { "json": true }, "jsonParams": "MENU_SCHEMA", "sharedParams": { "parsers": { "pdf": { "ocr": "auto" } } }, "maxAgeMs": 604800000 },
+      "response": { "url": "https://pizzeriestarita.it/en/menu/",
+        "json": { "requested": true, "success": true, "data": { "restaurant_name": "Pizzerie Starita", "menu_sections": [
+          { "section": "Not to be missed", "items": [
+            { "name": "Montanara Starita", "description": "Don Antonio creates this celebration of Neapolitan cuisine in the 80s. Tomato, provola cheese and more cheese; crispy outside and soft inside, because we start by frying it and then we place it into the oven, so as to create that irresistible crust. What makes it unique is the sauce, who’s secret recipe we jealously guard… indeed, greedily!", "price": ":null", "dietary_tags": [] },
+            { "name": "Marinara Starita", "description": "Sicilian datterini cherry tomato sauce, light dough, the lively flavor of garlic placed in the center of the disc and then the bold taste of pecorino, black pepper and oregano. It evokes our grandmother’s sauce, chopped tomatoes that gradually become a rich and velvety sauce. This is a real signature dish, the Starita dish that is spoken of all over the world and that is well recognized throughout Italy.", "price": ":null", "dietary_tags": [] },
+            { "name": "Corna di Maradona", "description": "The pizza dough is rolled in the shape of a horseshoe and plunged into the fryer: the result is a delicate fry, soft on the inside and fragrant outside. The creamy filling is of fresh sheep’s milk ricotta cheese, cicoli (pork cracklings) and black pepper.", "price": ":null", "dietary_tags": [] },
+            { "name": "Angioletti Fritti", "description": "They come from a recipe of Don Antonio’s mother, who loved to eat these small cylindrical pieces of fried pizza dough sprinkled with sugar. They are ideal both as an appetizer, accompanied by fresh tomato and arugula, and as a dessert, garnished with Nutella or pistachio cream.", "price": ":null", "dietary_tags": [] } ] },
+          { "section": "STARTERS", "items": [
+            { "name": "Fried Angioletti", "description": "Fried pizza sticks with arugula and datterino tomatoes.", "price": ":null", "dietary_tags": [] },
+            { "name": "Frittatina di pasta", "description": "With béchamel sauce, ham and provola cheese.", "price": ":null", "dietary_tags": [] },
+            { "name": "Rice Arancino", "description": "With ham and provola cheese.", "price": ":null", "dietary_tags": [] },
+            { "name": "Potato Crocchè", "description": "With provola cheese and pepper.", "price": ":null", "dietary_tags": [] },
+            { "name": "Stuffed zucchini flower", "description": "With sheep’s milk ricotta cheese and black pepper.", "price": ":null", "dietary_tags": [] } ] }
+        ] } },
+        "metadata": { "title": "menu | Pizzerie Starita", "language": "en-US" }, "request_id": "55c19287-04d1-4332-9b51-e6cb680b963e" }
+    },
+    "scrape|https://www.damichele.net/sede-di-napoli": {
+      "recorded_at": "2026-11-14T19:48:00Z",
+      "request": { "endpoint": "POST /v1/web/scrape", "url": "https://www.damichele.net/sede-di-napoli/", "formats": { "json": true, "images": true }, "jsonParams": "MENU_SCHEMA", "imageParams": { "enrich": ["dimensions", "classification"], "dedupe": "visual" }, "sharedParams": { "parsers": { "pdf": { "ocr": "auto" } } }, "maxAgeMs": 604800000 },
+      "response": { "url": "https://www.damichele.net/sede-di-napoli/",
+        "images": { "requested": true, "success": true, "data": [
+          { "url": "https://www.damichele.net/wp-content/uploads/2023/03/logo_pizzeria_da_michele.png", "alt": "Pizzeria da Michele", "width": 118, "height": 120, "classification": "logo" },
+          { "url": "https://www.damichele.net/wp-content/uploads/2023/03/mobile-napoli.jpg", "alt": "Napoli dal 1870", "width": 687, "height": 562, "classification": "photography" },
+          { "url": "https://www.damichele.net/wp-content/uploads/2023/03/QR-Code-Napoli.png", "alt": null, "width": 400, "height": 400, "classification": "graphic" },
+          { "url": "https://www.damichele.net/wp-content/uploads/2023/03/header_title_napoli.jpg", "alt": null, "width": 1920, "height": 300, "classification": "photography" }
+        ] },
+        "json": { "requested": true, "success": true, "data": { "restaurant_name": "Pizzeria da Michele", "menu_sections": [] } },
+        "metadata": { "title": "Sede di Napoli – Pizzeria da Michele", "language": "it-IT" }, "request_id": "6f0672dc-aa63-4113-baa7-de9e19b01440" }
+    }
+  }
+}

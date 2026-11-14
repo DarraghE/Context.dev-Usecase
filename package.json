@@ -1,0 +1,61 @@
+{
+  "name": "wedding-food-memory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turns a consenting couple's own photo and post exports into a ranked timeline of meaningful meals, enriched with real menus via Context.dev, so the caterer's chef can design a personal wedding menu.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "fixtures": "tsx scripts/seed-demo.ts --fixtures-only",
+    "seed": "tsx scripts/seed-demo.ts",
+    "setup": "npm run db:migrate && npm run seed",
+    "deletion:run": "tsx scripts/run-deletion.ts",
+    "replay:record": "tsx scripts/record-replay.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:accuracy": "tsx scripts/accuracy-check.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.8.0",
+    "@libsql/client": "0.18.0",
+    "@photostructure/tz-lookup": "11.8.0",
+    "@tus/file-store": "2.1.2",
+    "@tus/server": "2.4.7",
+    "context.dev": "3.29.0",
+    "drizzle-orm": "0.45.4",
+    "exifr": "7.1.3",
+    "jose": "6.2.17",
+    "next": "16.4.6",
+    "p-queue": "10.0.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sharp": "0.35.5",
+    "tus-js-client": "4.3.1",
+    "uuid": "14.0.3",
+    "yauzl": "3.4.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/yauzl": "3.4.0",
+    "@types/yazl": "3.3.1",
+    "dotenv": "18.0.10",
+    "drizzle-kit": "0.31.11",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0",
+    "yazl": "3.3.1"
+  }
+}
