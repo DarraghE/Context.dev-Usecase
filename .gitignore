@@ -13,8 +13,8 @@ next-env.d.ts
 .env.*.local
 
 # Runtime data: database, uploads, crops. Contains personal data in real use.
-data/
-storage/
+/data/
+/storage/
 
 # Generated synthetic exports (rebuild with `npm run fixtures`)
 fixtures/exports/
