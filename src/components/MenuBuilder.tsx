@@ -155,11 +155,11 @@ export function MenuBuilder({ allergies }: { allergies: string[] }) {
           ) : null}
         </div>
         {menus.length ? (
-          <div className="row">
+          <div className="row" style={{ maxWidth: "100%", minWidth: 0 }}>
             <label htmlFor="version" className="visually-hidden">
               Version
             </label>
-            <select id="version" value={selected ?? ""} onChange={(e) => setSelected(e.target.value)} style={{ width: "auto" }}>
+            <select id="version" value={selected ?? ""} onChange={(e) => setSelected(e.target.value)} style={{ width: "auto", maxWidth: "100%" }}>
               {menus.map((m) => (
                 <option key={m.id} value={m.id}>
                   Version {m.version} · {m.createdBy === "chef" ? "your edit" : "generated"} · {formatWhen(m.createdAt)}

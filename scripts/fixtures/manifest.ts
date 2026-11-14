@@ -337,7 +337,7 @@ export const COURSE_FIXES: Record<string, unknown> = {
     allergens: ["milk", "gluten"],
     dietary_variants: [
       { for: "vegan", change: "Coconut-yoghurt mousse and an olive-oil rye crumb." },
-      { for: "nut allergy", change: "Already nut-free: the pistachio was replaced with toasted rye; prepare on a nut-free station." },
+      { for: "nut allergy", change: "Nut-free as written (toasted rye crumb); plate on a nut-free station." },
     ],
     seasonality_note: "Bilberries are still early in June; use last summer's frozen wild berries.",
     suggested_ingredients: ["wild blueberries", "buttermilk", "rye flour", "butter"],

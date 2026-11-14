@@ -4,7 +4,7 @@ import { config } from "@/config";
 import { getDb } from "@/db/client";
 import { bookings, memories, menus, moments, places, type Course } from "@/db/schema";
 import { structured } from "@/integrations/claude";
-import { getReplay, ReplayMissingError } from "@/integrations/replay";
+import { getReplay, recordReplay, ReplayMissingError } from "@/integrations/replay";
 import { arr, bool, num, obj, str } from "@/integrations/schema";
 import { audit } from "@/lib/audit";
 import { newId, nowIso } from "@/lib/ids";
@@ -102,13 +102,22 @@ function fromReplay(raw: MenuDraft, mems: { id: string; dish_key: string }[]): M
   };
 }
 
+/** Recordings cite dish keys, not run-specific memory ids, so a replay works on any run. */
+function recordWithDishKeys(name: string, key: string, draft: MenuDraft, mems: { id: string; dish_key: string }[]) {
+  if (!config.record) return;
+  const byId = new Map(mems.map((m) => [m.id, m.dish_key]));
+  const map = (ids: string[]) => ids.map((id) => byId.get(id) ?? id);
+  const out = { courses: draft.courses.map((c) => ({ ...c, memory_ids: map(c.memory_ids) })), unused_memories_worth_considering: map(draft.unused_memories_worth_considering) };
+  recordReplay(name, key, { stop_reason: "end_turn", output: name.endsWith("menu_course") ? out.courses[0] : out, model: config.models.menu, recorded_at: nowIso() });
+}
+
 async function callMenu(input: Awaited<ReturnType<typeof menuInput>>, bookingId: string): Promise<MenuDraft> {
   if (config.demoReplay) {
     const entry = getReplay<{ output: unknown }>("claude/menu_generate", "default");
     if (!entry) throw new ReplayMissingError("claude/menu_generate", "default");
     return fromReplay(MenuZ.parse(entry.output), input.memories);
   }
-  return structured({
+  const draft = await structured({
     stage: "menu_generate",
     model: config.models.menu,
     effort: config.effort.menu,
@@ -129,8 +138,11 @@ async function callMenu(input: Awaited<ReturnType<typeof menuInput>>, bookingId:
     validate: MenuZ,
     replayKey: "default",
     stream: true,
+    noRecord: true,
     bookingId,
   });
+  recordWithDishKeys("claude/menu_generate", "default", draft, input.memories);
+  return draft;
 }
 
 async function callCourse(input: Awaited<ReturnType<typeof menuInput>>, current: Course[], position: number, problem: string | null, bookingId: string): Promise<Course> {
@@ -165,8 +177,10 @@ async function callCourse(input: Awaited<ReturnType<typeof menuInput>>, current:
     validate: CourseZ,
     replayKey: `${target.course}`,
     stream: true,
+    noRecord: true,
     bookingId,
   });
+  recordWithDishKeys("claude/menu_course", target.course, { courses: [c], unused_memories_worth_considering: [] }, input.memories);
   return { ...c, position, course: target.course };
 }
 
